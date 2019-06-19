@@ -8,10 +8,12 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-   // using .every()
-    return str.split('').every((char, i) => {
-        return char === str[str.length - 1 - i];
-    })
+   for (let i = 0; i < str.length / 2; i++){
+       if (str[i] !== str[str.length - 1 - i]){
+           return false
+       }
+   }
+   return true
 }
 
 module.exports = palindrome;
@@ -23,24 +25,10 @@ module.exports = palindrome;
 // }
 // return true
 
-// let palin = {}
-
-// for (let i = 0; i < str.length; i++){
-//     if (!palin[str]){
-//         palin[str[i]] = 1
-//     }
-//     else{
-//         palin[str[i]]++
-//     }
-// }
-// for (let key of str){
-//     if (key !== 2){
-//         return false
-//     }
-//     else {
-//         return true
-//     }
-// }
+// using .every()
+    // return str.split('').every((char, i) => {
+    //     return char === str[str.length - 1 - i];
+    // })
 
 // const reversed = str.split('').reverse().join('');
 // return str === reversed
